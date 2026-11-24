@@ -1,19 +1,23 @@
-# LLM Safety & Content Moderation Dataset
+# LLM Safety & Content Moderation — Rule-Based Demo
 
-A structured evaluation toolkit and dataset designed to assess Large Language Model (LLM) safety compliance, toxicity filtering, and automated content moderation rules.
+A small Python demonstration of checking text against a configurable list of moderation keywords and categories.
 
-## Features
-- **Safety Policy Categorization:** Structured JSON dataset defining severity levels and categories for content moderation (e.g., toxicity, hate speech, misinformation, and PII leakage).
-- **Automated Auditing Script:** A Python-based script that scans inputs/outputs against predefined safety rules and flags policy violations.
-- **Responsible AI Alignment:** Assists in auditing model outputs to ensure safe, ethical, and aligned deployments.
+## What it demonstrates
+- Loading moderation categories and sample cases from JSON
+- Scanning text for configured keyword matches
+- Reporting the category, severity label, and matched keyword
 
-## Project Structure
-- `README.md`: Project documentation and overview.
-- `moderation_rules.json`: Structured dataset containing test prompts, violation categories, and severity thresholds.
-- `audit_script.py`: Python auditing logic for detecting and scoring policy infractions.
+## Run
+```bash
+python audit_script.py
+```
 
-## How to Run
-1. Ensure Python is installed on your system.
-2. Clone the repository:
-   ```bash
-   git clone [https://github.com/hiba24-ian/llm-safety-content-moderation-dataset.git](https://github.com/hiba24-ian/llm-safety-content-moderation-dataset.git)
+## Important scope and limitations
+This is a simple keyword-matching demonstration, not a production moderation system or a complete safety classifier. It can miss harmful content that uses different wording and can flag harmless text when a keyword appears in a benign context. It does not understand meaning, intent, context, or policy nuance.
+
+## Files
+- `audit_script.py` — keyword audit logic
+- `moderation_rules.json` — sample categories, keywords, and test prompts
+
+## Author
+Hiba Almamoori
